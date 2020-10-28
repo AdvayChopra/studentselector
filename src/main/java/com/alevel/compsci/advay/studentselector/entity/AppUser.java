@@ -14,8 +14,16 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Entity
 @Table
+/**
+ * Entity of type AppUser with various members corresponding to
+ * Database columns
+ * This is a standard JPA entity
+ */
 public class AppUser {
-
+    /**
+     * userID is the primary key and automatically generated
+     * as specified by annotation
+     */
     @Id
     @GeneratedValue
     private int userID;
@@ -24,6 +32,15 @@ public class AppUser {
     private String password;
     private boolean subscriber;
     private boolean organiser;
+    private boolean admin;
+
+    public boolean getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
+    }
 
     public String getEmail() {
         return email;
